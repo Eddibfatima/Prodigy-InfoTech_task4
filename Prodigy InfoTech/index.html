@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #fff, #e8f0f2);
+            color: #333;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #a0ddfb;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .links {
+            display: flex;
+            gap: 1rem;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            color: #00aaff;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+            top: 100%;
+            right: 2rem;
+            background: #a0ddfb;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown a {
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            color: #00aaff;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        section#home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background: url('./image/digital.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        section#home h1 {
+            font-size: 2.5rem;
+        }
+        section#about, section#projects {
+            background: white;
+        }
+        section h2 {
+            margin: 1.5rem 0;
+            font-size: 2rem;
+            color: #a0ddfb;
+        }
+        .content {
+            max-width: 900px;
+            margin: auto;
+            text-align: left;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .project {
+            width: 45%;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: box-shadow 0.3s;
+        }
+        .project:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .social-links a {
+            margin: 0 1rem;
+            color: #333;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #a0ddfb;
+        }
+        @media (max-width: 768px) {
+            .links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+        <div class="dropdown" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm a Front-End Developer and Graphic & Web Designer passionate about building modern, user-friendly, and visually appealing websites</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="content">
+            <p>Hello! My name is EDDIB FATIMA-EZZAHRA. I'm a Web Developer specializing in creating interactive, responsive, and visually appealing websites. With expertise in modern web technologies like HTML, CSS, JavaScript, and frameworks such as React, I also bring a creative edge as a Front-End Developer and Graphic & Web Designer.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A responsive e-commerce platform built using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A volunteer-focused website developed with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>A fitness landing page designed using HTML, CSS, and JavaScript.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out through my social media:</p>
+        <div class="social-links">
+            <a href="https://github.com/Eddibfatima"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/fatima-ezzahra-eddib-252496221/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.behance.net/fatimaeeddib"><i class="fab fa-behance"></i></a>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('show');
+        }
+        AOS.init();
+    </script>
+</body>
+</html>
+
+
